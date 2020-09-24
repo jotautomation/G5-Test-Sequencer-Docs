@@ -1,5 +1,6 @@
 @startuml
 
+<<<<<<< HEAD
 participant G5
 participant TestSequencer
 actor Operator
