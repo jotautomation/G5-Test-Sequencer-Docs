@@ -2,20 +2,20 @@
 
 participant G5
 participant TestSequencer
-actor Operator
+actor Handler
 
 == Power on ==
 
 G5 -> TestSequencer: State: NotReady
-
 note over G5: G5 initializes
 
 
 == Test sequence loop start ==
 
-Operator -> G5: Puts DUT(s) in
+Handler -> G5: Put DUT(s) in
 
-Operator -> G5: Presses green button to trigger engage
+Handler -> G5: POST URL/api/state {"value": "Engage"}
+
 
 note over G5: Slide or hatch starts to close
 
@@ -34,8 +34,9 @@ TestSequencer -> TestSequencer: POST URL/api/state {"value": "Release"}
 
 G5 -> TestSequencer: State: NotReady
 
-Operator -> G5: Takes DUT(s) out
+Handler -> G5: Takes DUT(s) out
 
 == End of the test sequence loop ==
+
 
 @enduml
