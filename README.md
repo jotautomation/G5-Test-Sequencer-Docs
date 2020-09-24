@@ -16,4 +16,4 @@ See example program for handling states and sending release command.
 
 ![G5 control sequence with operator](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/jotautomation/G5-Test-Sequencer-Docs/master/pumls/G5_operator_sequence.puml)
 
-![G5 control sequence with handler](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/jotautomation/G5-Test-Sequencer-Docs/master/pumls/G5_handler_sequence.puml
+![G5 control sequence with handler](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/jotautomation/G5-Test-Sequencer-Docs/master/pumls/G5_handler_sequence.puml)
