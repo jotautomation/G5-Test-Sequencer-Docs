@@ -1,0 +1,42 @@
+@startuml
+skinparam state {
+  StartColor #005aa1
+  EndColor Red
+  BackgroundColor #005aa1
+  BackgroundColor<<Warning>> Olive
+  BorderColor Gray
+  FontName Apex
+  AttributeFontColor White
+  FontColor White
+  ArrowColor #005aa1
+}
+
+[*] --> NotReady
+NotReady -> ReadyForEngage
+ReadyForEngage -> Closing
+Closing -> Ready
+Ready -> NotReady
+
+Ready: G5 Tester is ready for testing.
+Ready: All signals are connected
+Ready: and G5 Tester is RF and
+Ready: audio shielded.
+
+Closing: G5 Tester is closing.
+Closing: Some test activities can
+Closing: be started now but there
+Closing: might be limitations on
+Closing: connected signals and
+Closing: machine is not RF or audio
+Closing: shielded.
+
+ReadyForEngage: DUT(s) is placed to
+ReadyForEngage: G5 Tester by operator
+ReadyForEngage: or feeder robot. Engage
+ReadyForEngage: command can be given
+ReadyForEngage: by pressing start button
+ReadyForEngage: or through API.
+
+NotReady: G5 Tester is not ready
+NotReady: for testing.
+@enduml
