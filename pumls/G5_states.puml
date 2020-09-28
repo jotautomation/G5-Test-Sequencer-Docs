@@ -4,7 +4,7 @@ skinparam state {
   EndColor Red
   BackgroundColor #005aa1
   BackgroundColor<<Warning>> Olive
-  BorderColor Gray
+  BorderColor #5a5a5a
   FontName Apex
   AttributeFontColor White
   FontColor White

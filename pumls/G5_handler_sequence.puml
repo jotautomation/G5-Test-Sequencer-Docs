@@ -1,5 +1,28 @@
 @startuml
 
+skinparam noteBorderColor #5a5a5a
+skinparam noteBackgroundColor #005aa1
+skinparam noteFontColor white
+
+
+skinparam sequence {
+  ArrowColor #005aa1
+  ParticipantBackgroundColor #005aa1
+  ParticipantFontName Apex
+  ParticipantFontSize 17
+  ParticipantFontColor White
+  ParticipantBorderColor #5a5a5a
+
+  ActorBorderColor #5a5a5a
+  ActorBackgroundColor #005aa1
+  ActorFontColor #005aa1
+  ActorFontSize 17
+  ActorFontName Apex
+
+
+}
+
+
 participant G5
 participant TestSequencer
 actor Handler
