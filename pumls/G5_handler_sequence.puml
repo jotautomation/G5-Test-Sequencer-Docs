@@ -25,7 +25,7 @@ skinparam sequence {
 
 participant G5
 participant TestSequencer
-actor Handler
+participant Handler
 
 == Power on ==
 

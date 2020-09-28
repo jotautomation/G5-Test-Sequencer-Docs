@@ -1,0 +1,66 @@
+
+@startuml
+
+skinparam noteBorderColor #5a5a5a
+skinparam noteBackgroundColor #005aa1
+skinparam noteFontColor white
+
+
+skinparam sequence {
+  ArrowColor #005aa1
+  ParticipantBackgroundColor #005aa1
+  ParticipantFontName Apex
+  ParticipantFontSize 17
+  ParticipantFontColor White
+  ParticipantBorderColor #5a5a5a
+
+  ActorBorderColor #5a5a5a
+  ActorBackgroundColor #005aa1
+  ActorFontColor #005aa1
+  ActorFontSize 17
+  ActorFontName Apex
+
+
+}
+
+
+participant "M Test Box"
+participant TestSequencer
+actor Operator
+
+== Power on ==
+
+"M Test Box" -> TestSequencer: State: NotReady
+
+note over "M Test Box": M Test Box initializes
+
+
+== Test sequence loop start ==
+
+Operator -> "M Test Box": Puts DUT(s) in
+
+Operator -> "M Test Box": Pushes slide to trigger M Test Box closing
+
+note over "M Test Box": Slide closes
+
+"M Test Box" -> TestSequencer: State: ReadyForEngage
+
+TestSequencer -> "M Test Box": POST URL/api/state {"value": "Engage"}
+
+note over "M Test Box": M Test Box engages DUT
+
+"M Test Box" -> TestSequencer: State: Ready
+
+note over TestSequencer, "M Test Box": M Test Box is ready for testing
+
+TestSequencer -> "M Test Box": POST URL/api/state {"value": "Release"}
+
+note over "M Test Box": M Test Box releases DUT and opens the slide
+
+"M Test Box" -> TestSequencer: State: NotReady
+
+Operator -> "M Test Box": Takes DUT(s) out
+
+== End of the test sequence loop ==
+
+@enduml
