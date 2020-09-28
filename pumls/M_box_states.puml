@@ -19,14 +19,6 @@ Ready -> NotReady
 Ready: M Test Box is ready for testing.
 Ready: All signals are connected.
 
-Closing: M Test Box is closing.
-Closing: Some test activities can
-Closing: be started now but there
-Closing: might be limitations on
-Closing: connected signals and
-Closing: machine is not RF or audio
-Closing: shielded.
-
 ReadyForEngage: DUT(s) is placed to M Test Box
 ReadyForEngage: by an operator or by a handler
 ReadyForEngage: machine and slide is closed.
