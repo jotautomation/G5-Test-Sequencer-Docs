@@ -1,0 +1,29 @@
+@startuml
+skinparam state {
+  StartColor #005aa1
+  EndColor Red
+  BackgroundColor #005aa1
+  BackgroundColor<<Warning>> Olive
+  BorderColor #5a5a5a
+  FontName Apex
+  AttributeFontColor White
+  FontColor White
+  ArrowColor #005aa1
+}
+
+[*] --> NotReady
+
+state ReadyForOpen{
+ReadyForOpen: The M Test Box is closed and ready for open command
+NotReady -down-> ReadyForOpen
+Empty: No DUT in
+Tested: Test executed with unknown result
+Fail: Test executed with fail result
+Pass: Test executed with pass result
+}
+Open -> NotReady
+Open: The M Test Box is open and ready to receive or give out the DUT.
+
+ReadyForOpen -up-> Open
+
+@enduml
