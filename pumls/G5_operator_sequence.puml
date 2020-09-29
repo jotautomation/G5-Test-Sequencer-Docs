@@ -25,12 +25,12 @@ skinparam sequence {
 
 
 participant G5
-participant TestSequencer
+participant "Test Sequencer"
 actor Operator
 
 == Power on ==
 
-G5 -> TestSequencer: State: NotReady
+G5 -> "Test Sequencer": State: NotReady
 
 note over G5: G5 initializes
 
@@ -43,20 +43,20 @@ Operator -> G5: Presses green button to trigger engage
 
 note over G5: Slide or hatch starts to close
 
-G5 -> TestSequencer: State: Ready
+G5 -> "Test Sequencer": State: Ready
 
-note over TestSequencer, G5
+note over "Test Sequencer", G5
 Testing can be started with some limitation,
 robot cannot be moved and there is no RF/audio shielding
 end note
 
-G5 -> TestSequencer: State: Ready
+G5 -> "Test Sequencer": State: Ready
 
-note over TestSequencer, G5: Slide or hatch is fully closed and all test features are available.
+note over "Test Sequencer", G5: Slide or hatch is fully closed and all test features are available.
 
-TestSequencer -> TestSequencer: POST URL/api/state {"value": "Release"}
+"Test Sequencer" -> "Test Sequencer": POST URL/api/state {"value": "Release"}
 
-G5 -> TestSequencer: State: NotReady
+G5 -> "Test Sequencer": State: NotReady
 
 Operator -> G5: Takes DUT(s) out
 

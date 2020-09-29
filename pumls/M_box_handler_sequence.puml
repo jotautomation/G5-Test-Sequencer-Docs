@@ -25,13 +25,13 @@ skinparam sequence {
 
 
 participant "M Test Box"
-participant TestSequencer
+participant "Test Sequencer"
 participant Handler
 
 == Power on ==
 
 
-"M Test Box" -> TestSequencer: State: NotReady
+"M Test Box" -> "Test Sequencer": State: NotReady
 
 note over "M Test Box": M Test Box initializes
 
@@ -53,21 +53,21 @@ note over "M Test Box": Slide closes
 
 "M Test Box" -> Handler : HandlerState: NotReady_Closed
 
-"M Test Box" -> TestSequencer: State: ReadyForEngage
+"M Test Box" -> "Test Sequencer": State: ReadyForEngage
 
-TestSequencer -> "M Test Box": POST URL/api/state {"value": "Engage"}
+"Test Sequencer" -> "M Test Box": POST URL/api/state {"value": "Engage"}
 
 note over "M Test Box": M Test Box engages DUT
 
-"M Test Box" -> TestSequencer: State: Ready
+"M Test Box" -> "Test Sequencer": State: Ready
 
-note over TestSequencer, "M Test Box": M Test Box is ready for testing
+note over "Test Sequencer", "M Test Box": M Test Box is ready for testing
 
-TestSequencer -> "M Test Box": POST URL/api/state {"value": "Release"}
+"Test Sequencer" -> "M Test Box": POST URL/api/state {"value": "Release"}
 
 note over "M Test Box": M Test Box releases DUT
 
-"M Test Box" -> TestSequencer: State: NotReady
+"M Test Box" -> "Test Sequencer": State: NotReady
 
 "M Test Box" -> Handler : HandlerState: ReadyToDispatch
 
